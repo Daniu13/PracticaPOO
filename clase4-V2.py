@@ -52,6 +52,9 @@ class Sistema:
         self.__lista_pacientes.append(pac)
         return True
 
+    #Función para ver los datos del paciente:
+    #Toma cómo parámetro self,c
+    #Si se encuentra un paciente en self.listapacientes y su verCedula es igual a c, se retorna el objeto paciente
     def verDatosPaciente(self,c):
         if self.verificarPac(c) == False:
             return None
