@@ -4,7 +4,9 @@ class Paciente:
         self.__cedula = int
         self.__genero = ""
         self.__servicio = ""
-        
+
+    #Getters de La clase Paciente
+    #Toman como parámetro el propio self, que toma el valor del objeto instantáneo y retorna cada caso respectivo de la función    
     def verNombre(self):
         return self.__nombre
     def verServicio(self):
@@ -14,6 +16,11 @@ class Paciente:
     def verCedula(self):
         return self.__cedula
     
+    #Setters de la clasee Paciente
+    #Parámetros: self, n/s/g/c
+    #se asigna con la variable el valor que se quiere dar con sintaxis similar a cuando se asignan atributos
+    #predeterminados en la función __init__:
+    #En vez de retornar cualquier valor asignan la variable al atributo
     def asignarNombre(self,n):
         self.__nombre = n
     def asignarServicio(self,s):
@@ -61,14 +68,12 @@ def main():
         opcion = int(input("Ingrese 0 para volver al menu, 1 para ingresar nuevo paciente, 2 ver paciente: , 3 - ver cantidad de pacientes "))
         if opcion == 1:
             print("A continuacion se solicitaran los seguientes datos:")
-            # 1 Se solicitaran los datos
             nombre = input("Ingrese el nombre: ")
             cedula = int(input("Ingrese la cedula: "))    
             genero = input("Ingrese el genero: ")
             servicio = input("Ingrese el servicio: ")
             # 2 se crea un objeto Paciente
             pac = Paciente()
-            # como es paciente esta vacio debo ingresarle la informacion
             pac.asignarNombre(nombre)
             pac.asignarCedula(cedula)
             pac.asignarGenero(genero)
@@ -104,5 +109,7 @@ def main():
         else:
             break
 
+#El método main se llama para poder ejecutar la función main, se usa para asegurarse de que el código
+#sea corrido en el archivo o entorno deseado, sin embargo al ser este un código de un sólo archivo carece de mayor utilidad
 if __name__ == '__main__':
     main()
